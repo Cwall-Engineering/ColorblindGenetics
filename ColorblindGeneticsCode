@@ -1,0 +1,97 @@
+#include <iostream>
+
+using namespace std;
+
+void input (double&female, double&male);
+void punnett (double&female, double&male);
+int main()
+{
+    double female, male;
+input(female, male);
+punnett(female, male);
+}
+
+void input (double&female, double&male) {
+    cout << "Does the female have normal vision (1), a carrier (2), or colorblind (3)?\n";
+    cin >> female;
+    cout << "Does the male have normal vision (1) or colorblind (2)?\n";
+    cin >> male;
+
+}
+
+void punnett (double&female, double&male) {
+
+    if (female == 1) {
+        if (male == 1) {
+             cout << "                    Female              \n";
+             cout << "             XB                XB       \n";
+             cout << "      __________________________________\n";
+             cout << "      |                |               |\n";
+             cout << " M  XB|     XBXB       |      XBXB     |\n";
+             cout << " a    |________________|_______________|\n";
+             cout << " l    |                |               |\n";
+             cout << " e  Y |      XBY       |      XBY      |\n";
+             cout << "      |________________|_______________|\n";
+        }
+        else if (male == 2) {
+             cout << "                    Female              \n";
+             cout << "             XB                XB       \n";
+             cout << "      __________________________________\n";
+             cout << "      |                |               |\n";
+             cout << " M  Xb|     XbXB       |      XbXB     |\n";
+             cout << " a    |________________|_______________|\n";
+             cout << " l    |                |               |\n";
+             cout << " e  Y |      XBY       |      XBY      |\n";
+             cout << "      |________________|_______________|\n";
+        }
+    }
+    else if (female == 2) {
+        if (male == 1) {
+             cout << "                    Female              \n";
+             cout << "             Xb                XB       \n";
+             cout << "      __________________________________\n";
+             cout << "      |                |               |\n";
+             cout << " M  XB|     XbXB       |      XBXB     |\n";
+             cout << " a    |________________|_______________|\n";
+             cout << " l    |                |               |\n";
+             cout << " e  Y |      XbY       |      XBY      |\n";
+             cout << "      |________________|_______________|\n";
+        }
+        else if (male == 2) {
+             cout << "                    Female              \n";
+             cout << "             Xb                XB       \n";
+             cout << "      __________________________________\n";
+             cout << "      |                |               |\n";
+             cout << " M  Xb|     XbXb       |      XbXB     |\n";
+             cout << " a    |________________|_______________|\n";
+             cout << " l    |                |               |\n";
+             cout << " e  Y |      XbY       |      XBY      |\n";
+             cout << "      |________________|_______________|\n";
+        }
+    }
+    else if (female == 3) {
+        if (male == 1) {
+             cout << "                    Female              \n";
+             cout << "             Xb                Xb       \n";
+             cout << "      __________________________________\n";
+             cout << "      |                |               |\n";
+             cout << " M  XB|     XbXB       |      XbXb     |\n";
+             cout << " a    |________________|_______________|\n";
+             cout << " l    |                |               |\n";
+             cout << " e  Y |      XbY       |      XbY      |\n";
+             cout << "      |________________|_______________|\n";
+        }
+        else if (male == 2) {
+            cout << "                    Female              \n";
+             cout << "             Xb                Xb       \n";
+             cout << "      __________________________________\n";
+             cout << "      |                |               |\n";
+             cout << " M  Xb|     XbXb       |      XbXb     |\n";
+             cout << " a    |________________|_______________|\n";
+             cout << " l    |                |               |\n";
+             cout << " e  Y |      XbY       |      XbY      |\n";
+             cout << "      |________________|_______________|\n";
+        }
+    }
+}
+
