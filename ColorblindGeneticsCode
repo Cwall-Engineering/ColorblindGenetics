@@ -1,24 +1,76 @@
 #include <iostream>
 
 using namespace std;
-
+//Defining the Functions
 void input (double&female, double&male);
 void punnett (double&female, double&male);
 int main()
 {
-    double female, male;
+//Defining the Variables
+double female, male;
+//Creating the opening screen display
+cout << "  _________________________________________  \n";
+cout << " |                                         | \n";
+cout << " |  This program allows the user to input  | \n";
+cout << " |  whether their father is colorblind or  | \n";
+cout << " |  has normal vision and if their mother  | \n";
+cout << " | is colorblind, a carrier, or has normal | \n";
+cout << " |   vision and displays a punnett square  | \n";
+cout << " |        based on the user's input.       | \n";
+cout << " |_________________________________________| \n\n";
+//Calls to the input function
 input(female, male);
+//Calls to the punnett function
 punnett(female, male);
 }
-
+//Function to allow users to enter inputs
 void input (double&female, double&male) {
-    cout << "Does the female have normal vision (1), a carrier (2), or colorblind (3)?\n";
+
+
+    cout << "Does the female have normal vision (type 1), a carrier (type 2), or colorblind (type 3)?\n";
     cin >> female;
-    cout << "Does the male have normal vision (1) or colorblind (2)?\n";
+    //Checks if there is a character or number greater than three in the female input
+    while (cin.fail() || female >= 4) {
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cout << "\nPlease enter only 1, 2, or 3.\n";
+            cin >> female;
+        }
+
+
+        if (female >= 4) {
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cout << "\nPlease enter only 1, 2, or 3.\n";
+            cin >> female;
+        }
+    }
+    cout << "\nDoes the male have normal vision (type 1) or colorblind (type 2)?\n";
     cin >> male;
+    //Checks if there is a character or number greater than two in the male input
+    while (cin.fail() || male >= 3) {
+     if (cin.fail()) {
+                cin.clear();
+                cin.ignore(10000, '\n');
+                cout << "\nPlease enter only 1 or 2.\n";
+                cin >> male;
+            }
 
-}
 
+    if (male >= 3) {
+        cin.clear();
+        cin.ignore(10000, '\n');
+        cout << "\nPlease enter only 1 or 2.\n";
+        cin >> male;
+        }
+    }
+    cout << endl;
+
+    }
+
+
+//Function to create the punnett squares
 void punnett (double&female, double&male) {
 
     if (female == 1) {
